@@ -5,18 +5,20 @@
   "description": "An extension for reverting Gmail to the Classic Theme",
   "homepage_url": "http://github.com/shellscape/gmail-classic",
   "update_url": "https://clients2.google.com/service/update2/crx",
-  "author": "Andrew Powell (shellscape)",
-  "manifest_version": 2,
-  "browser_action": {
+  "author": "Andrew Powell (shellscape) - forked by Fireblade",
+  "manifest_version": 3,
+  "action": {
     "default_icon": {
       "19": "/assets/16.png",
       "38": "/assets/48.png"
     }
   },
-  "content_scripts": [{
-    "matches": [ "https://mail.google.com/*" ],
-    "css": [ "gmail.css" ]
-  }],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "css": ["gmail.css"]
+    }
+  ],
   "icons": {
     "16": "/assets/16.png",
     "32": "/assets/32.png",
@@ -24,8 +26,6 @@
     "64": "/assets/64.png",
     "128": "/assets/128.png"
   },
-  "permissions": [
-    "activeTab",
-    "*://mail.google.com/"
-  ]
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://mail.google.com/*"]
 }
